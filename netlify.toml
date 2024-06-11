@@ -1,0 +1,9 @@
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+
+# public/images/duster.jpg shouldn't be available in function bundle
+# `netlify build --context deploy-preview`
+# public/next.svg should still be available
+[functions]
+  included_files = ["!public/images/**/*"]
